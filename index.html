@@ -8,449 +8,25 @@
 <meta name="description" content="Manikanta Raju's professional portfolio featuring electrical engineering, intelligent control systems, renewable energy, research publications and work experience.">
 
 <style>
-:root {
-  --navy: #123044;
-  --deep-blue: #075d83;
-  --teal-blue: #2787a4;
-  --accent: #159de0;
-  --text: #172f43;
-  --muted: #536a7b;
-  --card: rgba(241, 246, 246, 0.94);
-  --border: #c5e1eb;
-}
-
-* {
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  color: var(--text);
-  line-height: 1.5;
-  background: linear-gradient(
-    115deg,
-    #d6eaf0 0%,
-    #a6d7eb 45%,
-    #70bfe9 100%
-  );
-  background-attachment: fixed;
-}
-
-a {
-  color: #075b83;
-  text-decoration: none;
-}
-
-a:hover {
-  color: #159de0;
-}
-
-.container {
-  width: min(1050px, 92%);
-  margin: auto;
-}
-
-/* HEADER */
-.hero {
-  background: linear-gradient(
-    110deg,
-    #123044 0%,
-    #075d83 48%,
-    #2787a4 100%
-  );
-  color: white;
-  padding: 48px 0;
-  box-shadow: 0 5px 18px rgba(16, 56, 76, 0.17);
-}
-
-.hero-content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 32px;
-}
-
-.profile-photo {
-  width: 400px;
-  height: 225px;
-  object-fit: cover;
-  border-radius: 17px;
-  border: 3px solid #e5f3f7;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.16);
-  background: #dbeaf0;
-}
-
-.hero h1 {
-  margin: 0 0 15px;
-  font-size: clamp(34px, 4vw, 50px);
-  font-weight: 750;
-  line-height: 1.15;
-  background: linear-gradient(90deg, #e4f2fb, #56b9ef);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-.hero p {
-  color: #f0f7fb;
-  margin: 8px 0;
-}
-
-.hero .subtitle {
-  font-size: 19px;
-}
-
-.hero-buttons {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin-top: 20px;
-}
-
-/* BUTTONS */
-.btn {
-  display: inline-block;
-  padding: 10px 17px;
-  border-radius: 7px;
-  background: #eaf5fa;
-  color: #17476b;
-  border: 1px solid #eaf5fa;
-  font-weight: 700;
-  cursor: pointer;
-}
-
-.btn-outline {
-  background: transparent;
-  color: white;
-  border-color: #d1e8f2;
-}
-
-.btn-blue {
-  background: #168fd0;
-  color: white;
-  border-color: #168fd0;
-}
-
-.btn:hover {
-  opacity: 0.87;
-  text-decoration: none;
-}
-
-/* NAVIGATION */
-nav {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  background: rgba(238, 247, 249, 0.96);
-  border-bottom: 1px solid #b8dbe7;
-  box-shadow: 0 3px 10px rgba(21, 63, 85, 0.08);
-}
-
-.nav-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 22px;
-  padding: 15px 0;
-  flex-wrap: wrap;
-}
-
-nav a {
-  color: #17445c;
-  font-size: 14px;
-  font-weight: 700;
-}
-
-nav a:hover {
-  color: #129cdb;
-}
-
-/* CONTENT BOXES */
-main {
-  padding: 38px 0;
-}
-
-.section {
-  background: var(--card);
-  padding: 32px;
-  margin-bottom: 38px;
-  border: 1px solid rgba(255, 255, 255, 0.72);
-  border-radius: 17px;
-  box-shadow: 0 9px 24px rgba(34, 87, 113, 0.09);
-  scroll-margin-top: 82px;
-}
-
-.section h2 {
-  font-size: 28px;
-  font-weight: 750;
-  margin: 0 0 24px;
-  padding-bottom: 5px;
-  color: #174d69;
-}
-
-.section h3 {
-  color: #19394f;
-  font-size: 18px;
-  line-height: 1.35;
-  margin: 0 0 12px;
-}
-
-.section p {
-  margin-top: 8px;
-}
-
-.muted {
-  color: var(--muted);
-  font-size: 14px;
-}
-
-/* EXPERIENCE CARDS: THREE COLUMNS */
-.experience-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
-}
-
-.entry {
-  padding: 20px;
-  margin: 0 0 16px;
-  border-left: 6px solid var(--accent);
-  border-radius: 12px;
-  background: rgba(219, 237, 241, 0.65);
-  box-shadow: 0 3px 12px rgba(25, 75, 99, 0.035);
-}
-
-.experience-grid .entry {
-  margin: 0;
-  align-self: stretch;
-}
-
-.entry p {
-  margin: 6px 0;
-}
-
-/* RESEARCH PUBLICATIONS */
-.paper-list {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 20px;
-}
-
-.paper {
-  padding: 22px;
-  border-radius: 12px;
-  background: rgba(222, 239, 242, 0.73);
-  border: 1px solid #d4e7ec;
-  border-left: 6px solid var(--accent);
-  box-shadow: 0 5px 15px rgba(28, 78, 102, 0.05);
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.paper:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(28, 78, 102, 0.12);
-}
-
-.paper h3 {
-  font-size: 18px;
-  line-height: 1.45;
-}
-
-.paper p {
-  color: #304b5e;
-}
-
-.tag {
-  display: inline-block;
-  color: #075b83;
-  background: #cdebf7;
-  border-radius: 20px;
-  padding: 5px 11px;
-  font-size: 12px;
-  font-weight: 700;
-  margin-bottom: 12px;
-}
-
-.paper-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 9px;
-  margin-top: 18px;
-}
-
-.paper-btn {
-  display: inline-block;
-  background: #d5ebf5;
-  color: #124c6c;
-  border: 1px solid #b8ddea;
-  padding: 9px 13px;
-  border-radius: 7px;
-  font-size: 13px;
-  font-weight: 700;
-}
-
-.paper-btn.primary {
-  background: #168fd0;
-  color: white;
-  border-color: #168fd0;
-}
-
-.paper-btn:hover {
-  opacity: 0.85;
-  text-decoration: none;
-}
-
-/* PROJECT CARDS */
-.project-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
-}
-
-.project-card {
-  padding: 22px;
-  border-left: 6px solid var(--accent);
-  border-radius: 12px;
-  background: rgba(222, 239, 242, 0.73);
-  box-shadow: 0 4px 14px rgba(28, 78, 102, 0.05);
-}
-
-.project-card h3 {
-  font-size: 18px;
-}
-
-/* SKILLS */
-.skills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.skill {
-  padding: 9px 15px;
-  background: #d3eaf5;
-  color: #17476b;
-  border: 1px solid #bcdfea;
-  border-radius: 8px;
-  font-size: 14px;
-  font-weight: 600;
-}
-
-/* CONTACT */
-.contact-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-
-.contact-links a {
-  padding: 10px 15px;
-  background: #d4eaf5;
-  color: #17476b;
-  border: 1px solid #bcdfea;
-  border-radius: 7px;
-  font-weight: 650;
-}
-
-input, textarea {
-  width: 100%;
-  padding: 13px;
-  font: inherit;
-  color: var(--text);
-  background: #f8fcfd;
-  border: 1px solid #b9d7e2;
-  border-radius: 8px;
-}
-
-textarea {
-  min-height: 110px;
-}
-
-form {
-  display: grid;
-  gap: 14px;
-}
-
-form button {
-  background: #168fd0;
-  color: white;
-  border: 0;
-  border-radius: 7px;
-  padding: 12px 18px;
-  font-weight: 700;
-  cursor: pointer;
-}
-
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 28px 15px;
-  color: white;
-  background: linear-gradient(
-    110deg,
-    #123044,
-    #075d83,
-    #2787a4
-  );
-}
-
-footer a {
-  color: #d7f0ff;
-}
-
-footer p {
-  margin: 6px;
-}
-
-/* RESPONSIVE DESIGN */
-@media (max-width: 800px) {
-  .hero-content {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .profile-photo {
-    width: min(400px, 100%);
-    height: 220px;
-  }
-
-  .hero-buttons {
-    justify-content: center;
-  }
-
-  .experience-grid,
-  .project-grid,
-  .paper-list {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (max-width: 550px) {
-  .section {
-    padding: 22px 18px;
-    margin-bottom: 24px;
-  }
-
-  .experience-grid,
-  .project-grid,
-  .paper-list {
-    grid-template-columns: 1fr;
-  }
-
-  .nav-content {
-    gap: 12px 16px;
-  }
-
-  .hero {
-    padding: 35px 0;
-  }
-
-  .hero h1 {
-    font-size: 34px;
-  }
-}
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+:root{--ink:#16334b;--muted:#587286;--blue:#168fd0;--cyan:#50c6e8;--pale:#eaf7fc;--paper:#f8fcff;--line:#c9e8f4;--shadow:0 18px 50px rgba(18,74,111,.13)}
+*{box-sizing:border-box;scroll-behavior:smooth}body{margin:0;font-family:'DM Sans',sans-serif;color:var(--ink);line-height:1.7;background:linear-gradient(135deg,#dff4fb 0%,#b8e4f6 38%,#8bcdf0 70%,#d8f2fa 100%);background-attachment:fixed;overflow-x:hidden}
+body:before,body:after{content:"";position:fixed;z-index:-1;border-radius:50%;filter:blur(3px);pointer-events:none;animation:float 14s ease-in-out infinite alternate}body:before{width:390px;height:390px;top:12%;left:-180px;background:radial-gradient(circle,#73d8f2aa,transparent 70%)}body:after{width:460px;height:460px;right:-210px;bottom:5%;background:radial-gradient(circle,#69aef0aa,transparent 70%)}
+@keyframes float{from{transform:translate3d(0,-10px,0) scale(1)}to{transform:translate3d(35px,35px,0) scale(1.12)}}@keyframes enter{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}@keyframes shimmer{to{background-position:220% center}}@keyframes pulse{0%,100%{box-shadow:0 0 0 0 #69d4f044}50%{box-shadow:0 0 0 12px #69d4f000}}
+a{color:#0875ac;text-decoration:none;transition:color .2s,transform .2s}a:hover{color:#08a7d5}.container{width:min(1160px,92%);margin:auto}
+.hero{position:relative;isolation:isolate;overflow:hidden;color:white;padding:72px 0 66px;background:linear-gradient(120deg,#102e49 0%,#075d83 45%,#168fbd 75%,#55c5df 115%);border-radius:0 0 42px 42px;box-shadow:0 18px 55px #0b577333}.hero:before{content:"";position:absolute;z-index:-1;width:520px;height:520px;border:1px solid #ffffff22;border-radius:50%;right:-110px;top:-270px;box-shadow:0 0 0 35px #ffffff08,0 0 0 75px #ffffff06}.hero:after{content:"";position:absolute;z-index:-1;width:220px;height:220px;border-radius:50%;background:#68e1f322;filter:blur(8px);right:18%;bottom:-150px}.hero-content{display:flex;align-items:center;justify-content:center;gap:42px;animation:enter .9s ease both}.profile-photo{width:330px;height:230px;object-fit:cover;border-radius:26px;border:2px solid #ffffffbb;box-shadow:0 18px 45px #001c354d;background:#dff5fc;animation:pulse 4s infinite}.hero h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(38px,5.4vw,64px);letter-spacing:-2px;line-height:1.08;margin:0 0 18px;color:#fff}.hero p{color:#e8f8ff;margin:8px 0}.hero .subtitle{font-size:clamp(17px,2vw,21px);font-weight:600}.hero-buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 19px;border-radius:12px;background:linear-gradient(110deg,#f5fcff,#c9f0ff);color:#104767;border:1px solid #ffffff8a;font-weight:700;box-shadow:0 7px 18px #002d4522;transition:transform .25s,box-shadow .25s}.btn:hover{color:#064c70;transform:translateY(-3px);box-shadow:0 12px 25px #001e3733}.btn-outline{background:#ffffff12;color:white;border-color:#ffffff70;backdrop-filter:blur(12px)}.btn-blue{background:linear-gradient(110deg,#087cb7,#25b6df);color:white;border:0}
+nav{position:sticky;top:0;z-index:20;background:#f5fcfbe8;backdrop-filter:blur(18px);border-bottom:1px solid #b9dfedaa;box-shadow:0 5px 25px #174b6510}.nav-content{display:flex;justify-content:center;align-items:center;gap:8px 20px;padding:15px 0;flex-wrap:wrap}nav a{position:relative;color:#214e68;font-size:13px;font-weight:700;padding:6px 2px}nav a:after{content:"";position:absolute;left:0;right:100%;bottom:0;height:2px;border-radius:4px;background:linear-gradient(90deg,#168fd0,#50c6e8);transition:right .25s}nav a:hover{color:#0789c3}nav a:hover:after{right:0}
+main{padding:48px 0 35px}.section{position:relative;background:linear-gradient(145deg,#fbfeffef,#eaf8fbeF);padding:clamp(24px,4vw,38px);margin-bottom:32px;border:1px solid #ffffffd9;border-radius:25px;box-shadow:var(--shadow);scroll-margin-top:88px;overflow:hidden;animation:enter .7s ease both}.section:before{content:"";position:absolute;left:0;top:0;width:100%;height:5px;background:linear-gradient(90deg,#075d83,#168fd0,#50c6e8,#a4e9f5);background-size:200% auto;animation:shimmer 7s linear infinite}.section h2{font-family:'Space Grotesk',sans-serif;font-size:clamp(25px,3vw,33px);letter-spacing:-.7px;margin:0 0 23px;color:#124d70;display:flex;align-items:center;gap:12px}.section h2:after{content:"";height:3px;width:44px;border-radius:5px;background:linear-gradient(90deg,#168fd0,#61d1e8);margin-top:8px}.section h3{font-family:'Space Grotesk',sans-serif;color:#173f59;font-size:18px;line-height:1.4;margin:0 0 12px}.section p{margin-top:8px}.muted{color:var(--muted);font-size:14px}
+.experience-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.entry{position:relative;padding:22px;margin:0 0 16px;border:1px solid #c6e7f2;border-left:5px solid transparent;border-image:linear-gradient(180deg,#168fd0,#65d4e9) 1;border-radius:0 16px 16px 0;background:linear-gradient(130deg,#f7fdff,#e1f4fa);box-shadow:0 8px 22px #2d799010;transition:transform .25s,box-shadow .25s}.entry:hover,.paper:hover,.project-card:hover{transform:translateY(-5px);box-shadow:0 16px 30px #246a871c}.experience-grid .entry{margin:0;align-self:stretch}.entry p{margin:6px 0}
+.paper-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}.paper,.project-card{position:relative;padding:24px;border-radius:19px;background:linear-gradient(145deg,#faffff,#e1f5fa);border:1px solid #c8e8f2;box-shadow:0 8px 24px #246a8710;transition:transform .25s,box-shadow .25s;overflow:hidden}.paper:before,.project-card:before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,#075d83,#168fd0,#50c6e8)}.paper h3{font-size:18px;line-height:1.45}.paper p{color:#395b70}.tag{display:inline-block;color:#075b83;background:linear-gradient(100deg,#d5f2fc,#bceafa);border:1px solid #b4e3f3;border-radius:30px;padding:5px 12px;font-size:12px;font-weight:700;margin-bottom:13px}.paper-actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:18px}.paper-btn{display:inline-flex;align-items:center;justify-content:center;background:linear-gradient(110deg,#e9f8fc,#d4eff8);color:#124c6c;border:1px solid #b8ddea;padding:10px 14px;border-radius:10px;font-size:13px;font-weight:700;transition:transform .2s,filter .2s}.paper-btn.primary{background:linear-gradient(110deg,#087cb7,#21afd7);color:white;border-color:transparent}.paper-btn:hover{transform:translateY(-2px);filter:saturate(1.2);color:#075b83}.paper-btn.primary:hover{color:white}
+.project-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.project-card h3{font-size:18px}.skills{display:flex;flex-wrap:wrap;gap:11px}.skill{padding:10px 15px;background:linear-gradient(120deg,#f5fcff,#d8f2fa);color:#17476b;border:1px solid #b8e1ef;border-radius:12px;font-size:14px;font-weight:650;box-shadow:0 4px 10px #236b8510;transition:transform .2s,background .2s}.skill:hover{transform:translateY(-3px);background:linear-gradient(120deg,#c9f0fc,#a7e4f5)}
+.contact-links{display:flex;flex-wrap:wrap;gap:12px}.contact-links a{padding:11px 16px;background:linear-gradient(110deg,#f0fbff,#d8f2fa);color:#17476b;border:1px solid #b8dfea;border-radius:12px;font-weight:650;transition:transform .2s,box-shadow .2s}.contact-links a:hover{transform:translateY(-3px);box-shadow:0 8px 18px #1d7fa31c}input,textarea{width:100%;padding:13px;font:inherit;color:var(--ink);background:#f8fcfd;border:1px solid #b9d7e2;border-radius:10px}textarea{min-height:110px}form{display:grid;gap:14px}form button{background:linear-gradient(110deg,#087cb7,#25b6df);color:white;border:0;border-radius:10px;padding:13px 18px;font-weight:700;cursor:pointer}
+footer{text-align:center;padding:35px 15px;color:white;background:linear-gradient(115deg,#102e49,#075d83 48%,#168fbd,#55c5df);border-radius:32px 32px 0 0;margin-top:10px}footer a{color:#d7f5ff;text-decoration:underline}footer p{margin:6px}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s ease}.reveal.visible{opacity:1;transform:translateY(0)}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
+@media(max-width:850px){.hero-content{gap:25px}.profile-photo{width:280px;height:200px}.experience-grid,.project-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.paper-list{grid-template-columns:1fr}}
+@media(max-width:600px){.hero{padding:48px 0 43px;border-radius:0 0 28px 28px}.hero-content{flex-direction:column;text-align:center}.profile-photo{width:min(330px,100%);height:205px}.hero-buttons{justify-content:center}.hero h1{letter-spacing:-1px}.experience-grid,.project-grid,.paper-list{grid-template-columns:1fr}.section{padding:25px 18px;margin-bottom:23px;border-radius:19px}main{padding-top:28px}.nav-content{gap:6px 13px;padding:11px 0}nav a{font-size:12px}.entry{padding:18px}}
 </style>
 </head>
 
@@ -458,430 +34,450 @@ footer p {
 
 <!-- ================= HEADER ================= -->
 <header class="hero">
-  <div class="container hero-content">
+   <div class="container hero-content">
 
-    <!-- Upload your image as profile.jpg in the repository root -->
-    <img class="profile-photo"
-         src="profile.jpg"
-         alt="Manikanta Raju"
-         onerror="this.style.display='none'">
+     <!-- Upload your image as profile.jpg in the repository root -->
+     <img class="profile-photo"
+          src="profile.jpg"
+          alt="Manikanta Raju"
+          onerror="this.style.display='none'">
 
-    <div>
-      <h1>Manikanta Raju</h1>
-      <p class="subtitle">Deputy Manager | Adani Ports & SEZ</p>
-      <p>Control Systems | Renewable Energy | Cognitive Computing | Data Analytics | Android Developement</p>
+     <div>
+       <h1>Manikanta Raju</h1>
+       <p class="subtitle">Deputy Manager | Adani Ports & SEZ</p>
+       <p>Control Systems | Renewable Energy | Cognitive Computing | Data Analytics | Android Developement</p>
 
-      <div class="hero-buttons">
-        <a class="btn" href="#publications">Explore My Research</a>
-        <a class="btn btn-outline" href="#contact">Contact Me</a>
-      </div>
-    </div>
+       <div class="hero-buttons">
+         <a class="btn" href="#publications">Explore My Research</a>
+         <a class="btn btn-outline" href="#contact">Contact Me</a>
+       </div>
+     </div>
 
-  </div>
+   </div>
 </header>
 
 <!-- ================= NAVIGATION ================= -->
 <nav>
-  <div class="container nav-content">
-    <a href="#about">About Me</a>
-    <a href="#experience">Experience</a>
-    <a href="#publications">Publications</a>
-    <a href="#skills">Skills</a>
-    <a href="#education">Education</a>
-    <a href="#apps">Apps</a>
-    <a href="#certificates">Certificates</a>
-    <a href="#awards">Awards</a>
-    <a href="#resume">Resume</a>
-    <a href="#contact">Contact</a>
-  </div>
+   <div class="container nav-content">
+     <a href="#about">About Me</a>
+     <a href="#experience">Experience</a>
+     <a href="#publications">Publications</a>
+     <a href="#skills">Skills</a>
+     <a href="#education">Education</a>
+     <a href="#apps">Apps</a>
+     <a href="#certificates">Certificates</a>
+     <a href="#awards">Awards</a>
+     <a href="#resume">Resume</a>
+     <a href="#contact">Contact</a>
+   </div>
 </nav>
 
 <main class="container">
 
-  <!-- ================= ABOUT ================= -->
-  <section class="section" id="about">
-    <h2>About Me</h2>
+   <!-- ================= ABOUT ================= -->
+   <section class="section" id="about">
+     <h2>About Me</h2>
 
-    <p>
-      Hello, I’m Manikanta Raju, an electrical engineering professional 
-      with experience in industrial operations and a research background 
-      in intelligent control systems, cognitive computing, renewable energy, 
-      artificial intelligence, and electric drives.
-    </p>
+     <p>
+       Hello, I’m Manikanta Raju, an electrical engineering professional 
+       with experience in industrial operations and a research background 
+       in intelligent control systems, cognitive computing, renewable energy, 
+       artificial intelligence, and electric drives.
+     </p>
 
-    <p>
-      I am currently working as a Deputy Manager at Adani Ports and SEZ. 
-      I am passionate about innovation, research, continuous learning, and 
-      applying technical expertise to solve real-world engineering challenges.
-    </p>
+     <p>
+       I am currently working as a Deputy Manager at Adani Ports and SEZ. 
+       I am passionate about innovation, research, continuous learning, and 
+       applying technical expertise to solve real-world engineering challenges.
+     </p>
 
-    <div class="contact-links">
-      <a href="https://scholar.google.com/citations?hl=en&amp;authuser=2&amp;user=1zPbec0AAAAJ"
-         target="_blank" rel="noopener noreferrer">
-        Google Scholar ↗
-      </a>
-    </div>
-  </section>
+     <div class="contact-links">
+       <a href="https://scholar.google.com/citations?hl=en&authuser=2&user=1zPbec0AAAAJ"
+          target="_blank" rel="noopener noreferrer">
+         Google Scholar ↗
+       </a>
+     </div>
+   </section>
 
-  <!-- ================= EXPERIENCE ================= -->
-  <section class="section" id="experience">
-    <h2>Experience</h2>
+   <!-- ================= EXPERIENCE ================= -->
+   <section class="section" id="experience">
+     <h2>Experience</h2>
 
-    <div class="experience-grid">
+     <div class="experience-grid">
 
-      <div class="entry">
-        <h3>Deputy Manager</h3>
-        <p><strong>Adani Krishnapatnam Port Limited</strong></p>
-        <p class="muted">April 2026 – Present</p>
-      </div>
+       <div class="entry">
+         <h3>Deputy Manager</h3>
+         <p><strong>Adani Krishnapatnam Port Limited</strong></p>
+         <p class="muted">April 2026 – Present</p>
+       </div>
 
-      <div class="entry">
-        <h3>Assistant Manager</h3>
-        <p><strong>Adani Krishnapatnam Port Limited</strong></p>
-        <p class="muted">April 2025 – March 2026</p>
-      </div>
+       <div class="entry">
+         <h3>Assistant Manager</h3>
+         <p><strong>Adani Krishnapatnam Port Limited</strong></p>
+         <p class="muted">April 2025 – March 2026</p>
+       </div>
 
-      <div class="entry">
-        <h3>Senior Engineer</h3>
-        <p><strong>Adani Krishnapatnam Port Limited</strong></p>
-        <p class="muted">February 2025 – March 2025</p>
-      </div>
+       <div class="entry">
+         <h3>Senior Engineer</h3>
+         <p><strong>Adani Krishnapatnam Port Limited</strong></p>
+         <p class="muted">February 2025 – March 2025</p>
+       </div>
 
-      <div class="entry">
-        <h3>Graduate Engineer Trainee</h3>
-        <p><strong>Adani Krishnapatnam Port Limited</strong></p>
-        <p class="muted">August 2024 – January 2025</p>
-      </div>
+       <div class="entry">
+         <h3>Graduate Engineer Trainee</h3>
+         <p><strong>Adani Krishnapatnam Port Limited</strong></p>
+         <p class="muted">August 2024 – January 2025</p>
+       </div>
 
-    </div>
-  </section>
+     </div>
+   </section>
 
-  <!-- ================= PUBLICATIONS ================= -->
-  <section class="section" id="publications">
-    <h2>Research Publications</h2>
+   <!-- ================= PUBLICATIONS ================= -->
+   <section class="section" id="publications">
+     <h2>Research Publications</h2>
 
-    <p>
-      Explore my research publications in intelligent control,
-      renewable energy, electrical drives and power electronics.
-      Click "View Publication" for the publication page or
-      "Read Full Paper" for the corresponding full-paper link.
-    </p>
+     <p>
+       Explore my research publications in intelligent control,
+       renewable energy, electrical drives and power electronics.
+       Click "View Publication" for the publication page or
+       "Read Full Paper" for the corresponding full-paper link.
+     </p>
 
-    <div class="paper-list">
+     <div class="paper-list">
 
-      <article class="paper">
-        <span class="tag">Springer</span>
-        <h3>A Novel Fuzzy Cerebellar Adaptive Neuro Intelligent Controller for High-Performance Brushless DC Motor Drives</h3>
-        <p>International Journal of Dynamics and Control</p>
-        <div class="paper-actions">
-          <a class="paper-btn primary"
-             href="https://link.springer.com/article/10.1007/s40435-025-01590-0"
-             target="_blank" rel="noopener noreferrer">View Publication ↗</a>
-          <a class="paper-btn"
-             href="https://rdcu.be/d69X5"
-             target="_blank" rel="noopener noreferrer">Read Full Paper ↗</a>
-        </div>
-      </article>
+       <article class="paper">
+         <span class="tag">Springer</span>
+         <h3>A Novel Fuzzy Cerebellar Adaptive Neuro Intelligent Controller for High-Performance Brushless DC Motor Drives</h3>
+         <p>International Journal of Dynamics and Control</p>
+         <div class="paper-actions">
+           <a class="paper-btn primary"
+              href="https://link.springer.com/article/10.1007/s40435-025-01590-0"
+              target="_blank" rel="noopener noreferrer">View Publication ↗</a>
+           <a class="paper-btn"
+              href="https://rdcu.be/d69X5"
+              target="_blank" rel="noopener noreferrer">Read Full Paper ↗</a>
+         </div>
+       </article>
 
-      <article class="paper">
-        <span class="tag">Springer</span>
-        <h3>An Emotional Control Approach to Grid-Connected DFIG Based Wind Turbine</h3>
-        <p>International Journal of Dynamics and Control</p>
-        <div class="paper-actions">
-          <a class="paper-btn primary"
-             href="https://link.springer.com/article/10.1007/s40435-023-01379-z"
-             target="_blank" rel="noopener noreferrer">View Publication ↗</a>
-          <a class="paper-btn"
-             href="https://rdcu.be/d4IQR"
-             target="_blank" rel="noopener noreferrer">Read Full Paper ↗</a>
-        </div>
-      </article>
+       <article class="paper">
+         <span class="tag">Springer</span>
+         <h3>An Emotional Control Approach to Grid-Connected DFIG Based Wind Turbine</h3>
+         <p>International Journal of Dynamics and Control</p>
+         <div class="paper-actions">
+           <a class="paper-btn primary"
+              href="https://link.springer.com/article/10.1007/s40435-023-01379-z"
+              target="_blank" rel="noopener noreferrer">View Publication ↗</a>
+           <a class="paper-btn"
+              href="https://rdcu.be/d4IQR"
+              target="_blank" rel="noopener noreferrer">Read Full Paper ↗</a>
+         </div>
+       </article>
 
-      <article class="paper">
-        <span class="tag">Springer</span>
-        <h3>Modeling and Implementation of Brain-Inspired Intelligent Controller for Permanent Magnet Synchronous Motor Drive</h3>
-        <p>Transactions of the Indian National Academy of Engineering</p>
-        <div class="paper-actions">
-          <a class="paper-btn primary"
-             href="https://link.springer.com/article/10.1007/s41403-024-00512-4"
-             target="_blank" rel="noopener noreferrer">View Publication ↗</a>
-          <a class="paper-btn"
-             href="https://rdcu.be/d4D0b"
-             target="_blank" rel="noopener noreferrer">Read Full Paper ↗</a>
-        </div>
-      </article>
+       <article class="paper">
+         <span class="tag">Springer</span>
+         <h3>Modeling and Implementation of Brain-Inspired Intelligent Controller for Permanent Magnet Synchronous Motor Drive</h3>
+         <p>Transactions of the Indian National Academy of Engineering</p>
+         <div class="paper-actions">
+           <a class="paper-btn primary"
+              href="https://link.springer.com/article/10.1007/s41403-024-00512-4"
+              target="_blank" rel="noopener noreferrer">View Publication ↗</a>
+           <a class="paper-btn"
+              href="https://rdcu.be/d4D0b"
+              target="_blank" rel="noopener noreferrer">Read Full Paper ↗</a>
+         </div>
+       </article>
 
-      <article class="paper">
-        <span class="tag">IEEE</span>
-        <h3>A Novel Intelligent Controller Influenced by Cerebellum for Decoupled Power Flow Control of DFIG Based Wind Energy Conversion System</h3>
-        <p>2024 IEEE 4th International Conference on Sustainable Energy and Future Electric Transportation (SEFET)</p>
-        <div class="paper-actions">
-          <a class="paper-btn primary"
-             href="https://ieeexplore.ieee.org/document/10718013"
-             target="_blank" rel="noopener noreferrer">View IEEE Publication ↗</a>
-          <a class="paper-btn"
-             href="https://drive.google.com/file/d/1YxBOgB2JKvRwmL_tV8DQvWQHX-U-RtPS/view?usp=sharing"
-             target="_blank" rel="noopener noreferrer">Read Full Paper ↗</a>
-        </div>
-      </article>
+       <article class="paper">
+         <span class="tag">IEEE</span>
+         <h3>A Novel Intelligent Controller Influenced by Cerebellum for Decoupled Power Flow Control of DFIG Based Wind Energy Conversion System</h3>
+         <p>2024 IEEE 4th International Conference on Sustainable Energy and Future Electric Transportation (SEFET)</p>
+         <div class="paper-actions">
+           <a class="paper-btn primary"
+              href="https://ieeexplore.ieee.org/document/10718013"
+              target="_blank" rel="noopener noreferrer">View IEEE Publication ↗</a>
+           <a class="paper-btn"
+              href="https://drive.google.com/file/d/1YxBOgB2JKvRwmL_tV8DQvWQHX-U-RtPS/view?usp=sharing"
+              target="_blank" rel="noopener noreferrer">Read Full Paper ↗</a>
+         </div>
+       </article>
 
-            <article class="paper">
-        <span class="tag">Springer</span>
-        <h3>A Novel Intelligent Controller for Enhancing the Dynamic Performance of an SVM-DTC Based Induction Motor Drive</h3>
-        <p>Arabian Journal for Science and Engineering</p>
-        <div class="paper-actions">
-          <a class="paper-btn primary"
-             href="https://link.springer.com/article/10.1007/s13369-025-10532-z"
-             target="_blank" rel="noopener noreferrer">View Publication ↗</a>
-          <a class="paper-btn"
-             href="https://rdcu.be/eA23D"
-             target="_blank" rel="noopener noreferrer">Read Full Paper ↗</a>
-        </div>
-      </article>
+             <article class="paper">
+         <span class="tag">Springer</span>
+         <h3>A Novel Intelligent Controller for Enhancing the Dynamic Performance of an SVM-DTC Based Induction Motor Drive</h3>
+         <p>Arabian Journal for Science and Engineering</p>
+         <div class="paper-actions">
+           <a class="paper-btn primary"
+              href="https://link.springer.com/article/10.1007/s13369-025-10532-z"
+              target="_blank" rel="noopener noreferrer">View Publication ↗</a>
+           <a class="paper-btn"
+              href="https://rdcu.be/eA23D"
+              target="_blank" rel="noopener noreferrer">Read Full Paper ↗</a>
+         </div>
+       </article>
 
-      
-      <article class="paper">
-        <span class="tag">Research Square</span>
-        <h3>Brain Inspired Intelligent Maximum Power Point Tracking Algorithm for Grid Connected Photovoltaic System</h3>
-        <p>Preprint</p>
-        <div class="paper-actions">
-          <a class="paper-btn primary"
-             href="https://www.researchsquare.com/article/rs-4052183/v1"
-             target="_blank" rel="noopener noreferrer">View Research ↗</a>
-          <a class="paper-btn"
-             href="https://drive.google.com/file/d/1M9glvIGvVVlAwojFDGTJKj0kW4QK1GoM/view?usp=sharing"
-             target="_blank" rel="noopener noreferrer">Read Full Paper ↗</a>
-        </div>
-      </article>
+       
+       <article class="paper">
+         <span class="tag">Research Square</span>
+         <h3>Brain Inspired Intelligent Maximum Power Point Tracking Algorithm for Grid Connected Photovoltaic System</h3>
+         <p>Preprint</p>
+         <div class="paper-actions">
+           <a class="paper-btn primary"
+              href="https://www.researchsquare.com/article/rs-4052183/v1"
+              target="_blank" rel="noopener noreferrer">View Research ↗</a>
+           <a class="paper-btn"
+              href="https://drive.google.com/file/d/1M9glvIGvVVlAwojFDGTJKj0kW4QK1GoM/view?usp=sharing"
+              target="_blank" rel="noopener noreferrer">Read Full Paper ↗</a>
+         </div>
+       </article>
 
 
 
-    </div>
-  </section>
+     </div>
+   </section>
 
-  <!-- ================= SKILLS ================= -->
-  <section class="section" id="skills">
-    <h2>Technical Skills</h2>
+   <!-- ================= SKILLS ================= -->
+   <section class="section" id="skills">
+     <h2>Technical Skills</h2>
 
-    <div class="skills">
-      <span class="skill">Research &amp; Development</span>
-      <span class="skill">Control Systems</span>
-      <span class="skill">Cognitive Computing</span>
-      <span class="skill">Renewable Energy</span>
-      <span class="skill">Power Electronics</span>
-      <span class="skill">Artificial Intelligence</span>
-      <span class="skill">Electric Drives</span>
-      <span class="skill">MATLAB</span>
-      <span class="skill">Simulink</span>
-      <span class="skill">C</span>
-      <span class="skill">JavaScript</span>
-      <span class="skill">Python</span>
-      <span class="skill">Android Development</span>
-    </div>
-  </section>
+     <div class="skills">
+       <span class="skill">Research & Development</span>
+       <span class="skill">Control Systems</span>
+       <span class="skill">Cognitive Computing</span>
+       <span class="skill">Renewable Energy</span>
+       <span class="skill">Power Electronics</span>
+       <span class="skill">Artificial Intelligence</span>
+       <span class="skill">Electric Drives</span>
+       <span class="skill">MATLAB</span>
+       <span class="skill">Simulink</span>
+       <span class="skill">C</span>
+       <span class="skill">JavaScript</span>
+       <span class="skill">Python</span>
+       <span class="skill">Android Development</span>
+     </div>
+   </section>
 
-  <!-- ================= EDUCATION ================= -->
-  <section class="section" id="education">
-    <h2>Education</h2>
+   <!-- ================= EDUCATION ================= -->
+   <section class="section" id="education">
+     <h2>Education</h2>
 
-    <div class="entry">
-      <h3>B.Tech + M.Tech Dual Degree</h3>
-      <p>Electrical &amp; Electronics Engineering (B.Tech) and Power Electronics (M.Tech)</p>
-      <p>JNTUH UCESTH</p>
-      <p class="muted">2024 | GPA: 8/10</p>
-    </div>
+     <div class="entry">
+       <h3>B.Tech + M.Tech Dual Degree</h3>
+       <p>Electrical & Electronics Engineering (B.Tech) and Power Electronics (M.Tech)</p>
+       <p>JNTUH UCESTH</p>
+       <p class="muted">2024 | GPA: 8/10</p>
+     </div>
 
-    <div class="entry">
-      <h3>Intermediate</h3>
-      <p>Bhashyam Junior College</p>
-      <p>Board of Intermediate Education</p>
-      <p class="muted">2019 | GPA: 10/10</p>
-    </div>
+     <div class="entry">
+       <h3>Intermediate</h3>
+       <p>Bhashyam Junior College</p>
+       <p>Board of Intermediate Education</p>
+       <p class="muted">2019 | GPA: 10/10</p>
+     </div>
 
-    <div class="entry">
-      <h3>Secondary Education</h3>
-      <p>Bhashyam High School</p>
-      <p>Board of Secondary Education</p>
-      <p class="muted">2017 | GPA: 10/10</p>
-    </div>
-  </section>
+     <div class="entry">
+       <h3>Secondary Education</h3>
+       <p>Bhashyam High School</p>
+       <p>Board of Secondary Education</p>
+       <p class="muted">2017 | GPA: 10/10</p>
+     </div>
+   </section>
 
-  <!-- ================= INTERNSHIP ================= -->
-  <section class="section" id="internship">
-    <h2>Internship &amp; Training</h2>
+   <!-- ================= INTERNSHIP ================= -->
+   <section class="section" id="internship">
+     <h2>Internship & Training</h2>
 
-    <div class="entry">
-      <h3>MathWorks Virtual Internship on Artificial Intelligence</h3>
-      <p class="muted">2023</p>
-      <a class="paper-btn"
-         href="https://drive.google.com/file/d/1UWo5O2yIHBKAFKsUJt__JGYrKK7ykTXA/view?usp=drive_link"
-         target="_blank" rel="noopener noreferrer">View Internship Certificate ↗</a>
-    </div>
-  </section>
+     <div class="entry">
+       <h3>MathWorks Virtual Internship on Artificial Intelligence</h3>
+       <p class="muted">2023</p>
+       <a class="paper-btn"
+          href="https://drive.google.com/file/d/1UWo5O2yIHBKAFKsUJt__JGYrKK7ykTXA/view?usp=drive_link"
+          target="_blank" rel="noopener noreferrer">View Internship Certificate ↗</a>
+     </div>
+   </section>
 
-  <!-- ================= APPS ================= -->
-  <section class="section" id="apps">
-    <h2>Apps Developed</h2>
+   <!-- ================= APPS ================= -->
+   <section class="section" id="apps">
+     <h2>Apps Developed</h2>
 
-    <div class="project-grid">
+     <div class="project-grid">
 
-      <div class="project-card">
-        <h3>Plagiarism-AI Report Generator</h3>
-        <p>Application for generating plagiarism and AI-related reports for for all type of documents, thesis, journal/conference papers, dissertations etc..,</p>
-        <a class="paper-btn primary"
-           href="https://play.google.com/store/apps/details?id=com.mani.mani98"
-           target="_blank" rel="noopener noreferrer">View App ↗</a>
-      </div>
+       <div class="project-card">
+         <h3>Plagiarism-AI Report Generator</h3>
+         <p>Application for generating plagiarism and AI-related reports for for all type of documents, thesis, journal/conference papers, dissertations etc..,</p>
+         <a class="paper-btn primary"
+            href="https://play.google.com/store/apps/details?id=com.mani.mani98"
+            target="_blank" rel="noopener noreferrer">View App ↗</a>
+       </div>
 
-      <div class="project-card">
-        <h3>Maniback App</h3>
-        <p>An affiliate marketing app that allows users to shop and earn cashback on every purchase</p>
-        <a class="paper-btn primary"
-           href="https://play.google.com/store/apps/details?id=com.mani.mani7"
-           target="_blank" rel="noopener noreferrer">View App ↗</a>
-      </div>
+       <div class="project-card">
+         <h3>Maniback App</h3>
+         <p>An affiliate marketing app that allows users to shop and earn cashback on every purchase</p>
+         <a class="paper-btn primary"
+            href="https://play.google.com/store/apps/details?id=com.mani.mani7"
+            target="_blank" rel="noopener noreferrer">View App ↗</a>
+       </div>
 
-      <div class="project-card">
-        <h3>JNTUH App</h3>
-        <p>Books, PDFs, lecture notes, and study materials for Engineering students</p>
-        <a class="paper-btn primary"
-           href="https://play.google.com/store/apps/details?id=com.mani.jntuh"
-           target="_blank" rel="noopener noreferrer">View App ↗</a>
-      </div>
+       <div class="project-card">
+         <h3>JNTUH App</h3>
+         <p>Books, PDFs, lecture notes, and study materials for Engineering students</p>
+         <a class="paper-btn primary"
+            href="https://play.google.com/store/apps/details?id=com.mani.jntuh"
+            target="_blank" rel="noopener noreferrer">View App ↗</a>
+       </div>
 
-    </div>
-  </section>
+     </div>
+   </section>
 
-  <!-- ================= CERTIFICATES ================= -->
-  <section class="section" id="certificates">
-    <h2>Certificates &amp; Recognition</h2>
+   <!-- ================= CERTIFICATES ================= -->
+   <section class="section" id="certificates">
+     <h2>Certificates & Recognition</h2>
 
-    <div class="entry">
-      <h3>Certificate of Appreciation — TPC Member &amp; Reviewer</h3>
-      <p>2024 6th International Conference on Soft Computing and its Engineering Applications.</p>
-      <a class="paper-btn"
-         href="https://drive.google.com/file/d/1YqAvY_eXIR_mMkKL-LIP093ei0E2qNsg/view?usp=sharing"
-         target="_blank" rel="noopener noreferrer">View Certificate ↗</a>
-    </div>
+     <div class="entry">
+       <h3>Certificate of Appreciation — TPC Member & Reviewer</h3>
+       <p>2024 6th International Conference on Soft Computing and its Engineering Applications.</p>
+       <a class="paper-btn"
+          href="https://drive.google.com/file/d/1YqAvY_eXIR_mMkKL-LIP093ei0E2qNsg/view?usp=sharing"
+          target="_blank" rel="noopener noreferrer">View Certificate ↗</a>
+     </div>
 
-    <div class="entry">
-      <h3>Research Paper Presentation</h3>
-      <p>IEEE 4th International Conference on SEFET 2024.</p>
-      <a class="paper-btn"
-         href="https://drive.google.com/file/d/1Ml_00DbuHl-YwBZnj6SPebw2oqqDYT8j/view?usp=sharing"
-         target="_blank" rel="noopener noreferrer">View Certificate ↗</a>
-    </div>
+     <div class="entry">
+       <h3>Research Paper Presentation</h3>
+       <p>IEEE 4th International Conference on SEFET 2024.</p>
+       <a class="paper-btn"
+          href="https://drive.google.com/file/d/1Ml_00DbuHl-YwBZnj6SPebw2oqqDYT8j/view?usp=sharing"
+          target="_blank" rel="noopener noreferrer">View Certificate ↗</a>
+     </div>
 
-    <div class="entry">
-      <h3>Project Presentation — Quality Concepts</h3>
-      <p>10th Annual Chapter Convention on Quality Concepts by QCFI.</p>
-      <a class="paper-btn"
-         href="https://drive.google.com/file/d/13LvMAWz4Z6p3rk73wPI1ACtXeDvDji_X/view?usp=sharing"
-         target="_blank" rel="noopener noreferrer">View Certificate ↗</a>
-    </div>
+     <div class="entry">
+       <h3>Project Presentation — Quality Concepts</h3>
+       <p>10th Annual Chapter Convention on Quality Concepts by QCFI.</p>
+       <a class="paper-btn"
+          href="https://drive.google.com/file/d/13LvMAWz4Z6p3rk73wPI1ACtXeDvDji_X/view?usp=sharing"
+          target="_blank" rel="noopener noreferrer">View Certificate ↗</a>
+     </div>
 
-    <div class="entry">
-      <h3>Journal Reviewer Appreciation</h3>
-      <p>Journal of Advances in Mathematics and Computer Science.</p>
-      <a class="paper-btn"
-         href="https://drive.google.com/file/d/16zA1bLapyhIMH8-0faOyfGms144KCEP3/view?usp=sharing"
-         target="_blank" rel="noopener noreferrer">View Certificate ↗</a>
-    </div>
-  </section>
+     <div class="entry">
+       <h3>Journal Reviewer Appreciation</h3>
+       <p>Journal of Advances in Mathematics and Computer Science.</p>
+       <a class="paper-btn"
+          href="https://drive.google.com/file/d/16zA1bLapyhIMH8-0faOyfGms144KCEP3/view?usp=sharing"
+          target="_blank" rel="noopener noreferrer">View Certificate ↗</a>
+     </div>
+   </section>
 
-  <!-- ================= AWARDS ================= -->
-  <section class="section" id="awards">
-    <h2>Awards &amp; Achievements</h2>
+   <!-- ================= AWARDS ================= -->
+   <section class="section" id="awards">
+     <h2>Awards & Achievements</h2>
 
-    <div class="entry">
-      <h3>Young Entrepreneur of the Year 2022</h3>
-      <p>Received from Leader Awards 2022.</p>
-      <a class="paper-btn"
-         href="https://drive.google.com/file/d/1biy_IqXd5fpUXajEwfNlppEu4LsEQejd/view?usp=sharing"
+     <div class="entry">
+       <h3>Young Entrepreneur of the Year 2022</h3>
+       <p>Received from Leader Awards 2022.</p>
+       <a class="paper-btn"
+          href="https://drive.google.com/file/d/1biy_IqXd5fpUXajEwfNlppEu4LsEQejd/view?usp=sharing"
+          target="_blank" rel="noopener noreferrer">View Award ↗</a>
+     </div>
+
+     <div class="entry">
+       <h3>Adani Knowledge Mall 2024–25</h3>
+       <p>Recognition for dedication, creativity and innovation.</p>
+       <a class="paper-btn"
+          href="https://drive.google.com/file/d/1W3_qiAoGnqfe-RUE6ZufQ9wzvt6mnl3U/view?usp=sharing"
+          target="_blank" rel="noopener noreferrer">View Award ↗</a>
+     </div>
+
+     <div class="entry">
+       <h3>Best Facilitator Award — CCQC 2025</h3>
+       <p>11th Annual Convention on Quality Concepts, QCFI Tirupati Chapter.</p>
+       <a class="paper-btn"
+          href="https://drive.google.com/file/d/1CEchUZVI_3JiW6nzAxohuCsFly-dIkD0/view?usp=sharing"
+          target="_blank" rel="noopener noreferrer">View Award ↗</a>
+     </div>
+
+     <div class="entry">
+       <h3>Gold Award — CCQC 2024</h3>
+       <p>10th Convention on Quality Concepts, QCFI Tirupati Chapter.</p>
+     </div>
+
+     <div class="entry">
+       <h3>Excellent Award — NCQC 2024</h3>
+       <p>Recognition by QCFI and selection for the international level.</p>
+       <a class="paper-btn"
+       href="https://drive.google.com/drive/folders/1Sw-WbowrXwOx4nCTXdxpsy2adBn9ISNo?usp=sharing"
          target="_blank" rel="noopener noreferrer">View Award ↗</a>
-    </div>
+     </div>
+   </section>
 
-    <div class="entry">
-      <h3>Adani Knowledge Mall 2024–25</h3>
-      <p>Recognition for dedication, creativity and innovation.</p>
-      <a class="paper-btn"
-         href="https://drive.google.com/file/d/1W3_qiAoGnqfe-RUE6ZufQ9wzvt6mnl3U/view?usp=sharing"
-         target="_blank" rel="noopener noreferrer">View Award ↗</a>
-    </div>
+   <!-- ================= RESUME ================= -->
+   <section class="section" id="resume">
+     <h2>Resume & CV</h2>
 
-    <div class="entry">
-      <h3>Best Facilitator Award — CCQC 2025</h3>
-      <p>11th Annual Convention on Quality Concepts, QCFI Tirupati Chapter.</p>
-      <a class="paper-btn"
-         href="https://drive.google.com/file/d/1CEchUZVI_3JiW6nzAxohuCsFly-dIkD0/view?usp=sharing"
-         target="_blank" rel="noopener noreferrer">View Award ↗</a>
-    </div>
+     <p>
+       Explore my complete professional background, education,
+       experience and technical qualifications.
+     </p>
 
-    <div class="entry">
-      <h3>Gold Award — CCQC 2024</h3>
-      <p>10th Convention on Quality Concepts, QCFI Tirupati Chapter.</p>
-    </div>
+     <!-- Upload your resume PDF as resume.pdf -->
+     <div class="paper-actions">
+       <a class="btn btn-blue"
+          href="resume.pdf"
+          target="_blank" rel="noopener noreferrer">View Full Resume ↗</a>
 
-    <div class="entry">
-      <h3>Excellent Award — NCQC 2024</h3>
-      <p>Recognition by QCFI and selection for the international level.</p>
-      <a class="paper-btn"
-      href="https://drive.google.com/drive/folders/1Sw-WbowrXwOx4nCTXdxpsy2adBn9ISNo?usp=sharing"
-        target="_blank" rel="noopener noreferrer">View Award ↗</a>
-    </div>
-  </section>
+       <a class="paper-btn"
+          href="resume.pdf"
+          download="Manikanta-Raju-Resume.pdf">Download Resume ↓</a>
+     </div>
+   </section>
 
-  <!-- ================= RESUME ================= -->
-  <section class="section" id="resume">
-    <h2>Resume &amp; CV</h2>
+   <!-- ================= CONTACT ================= -->
+   <section class="section" id="contact">
+     <h2>Contact Me</h2>
 
-    <p>
-      Explore my complete professional background, education,
-      experience and technical qualifications.
-    </p>
+     <p>
+       Feel free to connect with me for research collaborations,
+       technical discussions and professional opportunities.
+     </p>
 
-    <!-- Upload your resume PDF as resume.pdf -->
-    <div class="paper-actions">
-      <a class="btn btn-blue"
-         href="resume.pdf"
-         target="_blank" rel="noopener noreferrer">View Full Resume ↗</a>
+     <div class="contact-links">
+       <a href="mailto:manivelpula5@gmail.com">✉ Email Me</a>
+       <a href="tel:+917032882037">☎ +91 7032882037</a>
 
-      <a class="paper-btn"
-         href="resume.pdf"
-         download="Manikanta-Raju-Resume.pdf">Download Resume ↓</a>
-    </div>
-  </section>
+       <a href="https://scholar.google.com/citations?hl=en&authuser=2&user=1zPbec0AAAAJ"
+          target="_blank" rel="noopener noreferrer">Google Scholar ↗</a>
 
-  <!-- ================= CONTACT ================= -->
-  <section class="section" id="contact">
-    <h2>Contact Me</h2>
-
-    <p>
-      Feel free to connect with me for research collaborations,
-      technical discussions and professional opportunities.
-    </p>
-
-    <div class="contact-links">
-      <a href="mailto:manivelpula5@gmail.com">✉ Email Me</a>
-      <a href="tel:+917032882037">☎ +91 7032882037</a>
-
-      <a href="https://scholar.google.com/citations?hl=en&amp;authuser=2&amp;user=1zPbec0AAAAJ"
-         target="_blank" rel="noopener noreferrer">Google Scholar ↗</a>
-
-      <!-- Replace with your personal LinkedIn profile URL -->
-      <a href="https://www.linkedin.com/"
-         target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
-    </div>
-  </section>
+       <!-- Replace with your personal LinkedIn profile URL -->
+       <a href="https://www.linkedin.com/"
+          target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+     </div>
+   </section>
 
 </main>
 
 <!-- ================= FOOTER ================= -->
 <footer>
-  <p><strong>Manikanta Raju</strong></p>
-  <p>© 2026 Manikanta Raju. All rights reserved.</p>
-  <p><a href="#about">Back to Top ↑</a></p>
+   <p><strong>Manikanta Raju</strong></p>
+   <p>© 2026 Manikanta Raju. All rights reserved.</p>
+   <p><a href="#about">Back to Top ↑</a></p>
 </footer>
 
+<script>
+// Subtle scroll reveal, with a safe fallback for older browsers.
+(function(){
+  const items = document.querySelectorAll('.section, .paper, .project-card, .entry');
+  items.forEach(el => el.classList.add('reveal'));
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08 });
+    items.forEach(el => observer.observe(el));
+  } else {
+    items.forEach(el => el.classList.add('visible'));
+  }
+})();
+</script>
 </body>
 </html>
