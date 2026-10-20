@@ -1,0 +1,530 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manikanta Raju | Professional Portfolio</title>
+<meta name="description" content="Professional portfolio of Manikanta Raju, Deputy Manager, researcher in intelligent control systems, renewable energy and electrical drives.">
+
+<style>
+:root {
+  --blue: #2878b5;
+  --dark-blue: #17476b;
+  --light-blue: #eaf4fc;
+  --background: #f5f9fd;
+  --white: #fff;
+  --text: #27364a;
+  --muted: #66768a;
+  --border: #dce7f0;
+}
+* { box-sizing: border-box; scroll-behavior: smooth; }
+body {
+  margin: 0; font-family: "Segoe UI", Arial, sans-serif;
+  color: var(--text); background: var(--background); line-height: 1.7;
+}
+a { color: var(--blue); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.container { width: min(1080px, 92%); margin: auto; }
+
+/* HEADER */
+.hero {
+  background: linear-gradient(135deg, #17476b, #2878b5);
+  color: white; padding: 55px 0;
+}
+.hero-content {
+  display: flex; align-items: center; justify-content: center;
+  gap: 35px;
+}
+.profile-photo {
+  width: 165px; height: 165px; border-radius: 50%;
+  object-fit: cover; border: 5px solid white; background: white;
+}
+.hero h1 { font-size: clamp(30px, 5vw, 43px); line-height: 1.2; margin: 0 0 10px; }
+.hero p { color: #e4f2ff; margin: 5px 0; }
+.hero .subtitle { font-size: 18px; }
+.hero-buttons { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 20px; }
+.btn {
+  display: inline-block; padding: 9px 17px; border-radius: 7px;
+  font-weight: 600; background: white; color: var(--dark-blue);
+  border: 1px solid white; cursor: pointer;
+}
+.btn-outline { background: transparent; color: white; }
+.btn-blue { background: var(--blue); color: white; border-color: var(--blue); }
+.btn:hover { opacity: .88; text-decoration: none; }
+
+/* NAVIGATION */
+nav {
+  position: sticky; top: 0; z-index: 10; background: white;
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 2px 8px #1e46640d;
+}
+.nav-content {
+  display: flex; justify-content: center; gap: 22px;
+  padding: 13px 0; flex-wrap: wrap;
+}
+nav a { color: var(--text); font-size: 14px; font-weight: 600; }
+nav a:hover { color: var(--blue); }
+
+/* CONTENT */
+main { padding: 28px 0; }
+.section {
+  background: white; padding: 27px 30px; margin-bottom: 23px;
+  border: 1px solid var(--border); border-radius: 12px;
+  box-shadow: 0 4px 15px #214b6e0b; scroll-margin-top: 80px;
+}
+.section h2 {
+  margin: 0 0 20px; font-size: 23px; color: var(--dark-blue);
+  padding-bottom: 10px; border-bottom: 2px solid var(--light-blue);
+}
+.section h3 { color: var(--blue); font-size: 17px; margin: 0 0 5px; }
+.muted { color: var(--muted); font-size: 14px; }
+.entry {
+  padding: 0 0 17px 18px; margin-bottom: 17px;
+  border-left: 3px solid #b8d9f3; border-bottom: 1px solid #edf2f7;
+}
+.entry:last-child { border-bottom: 0; margin-bottom: 0; }
+.entry p { margin: 5px 0; }
+
+/* PUBLICATION CARDS */
+.paper-list { display: grid; grid-template-columns: 1fr; gap: 16px; }
+.paper {
+  padding: 20px; border: 1px solid var(--border);
+  border-radius: 10px; background: #fbfdff;
+  transition: transform .2s, box-shadow .2s;
+}
+.paper:hover { transform: translateY(-2px); box-shadow: 0 5px 18px #17476b12; }
+.paper h3 { font-size: 17px; line-height: 1.5; margin: 0 0 8px; }
+.paper p { margin: 6px 0 12px; }
+.paper-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+.paper-btn {
+  display: inline-block; background: var(--light-blue);
+  color: var(--dark-blue); padding: 8px 13px; border-radius: 6px;
+  font-size: 13px; font-weight: 700; border: 1px solid #d5e8f8;
+}
+.paper-btn.primary { background: var(--blue); color: white; border-color: var(--blue); }
+.paper-btn:hover { text-decoration: none; opacity: .85; }
+.tag {
+  display: inline-block; background: var(--light-blue);
+  color: var(--dark-blue); padding: 3px 9px; border-radius: 15px;
+  font-size: 12px; font-weight: 600;
+}
+.project-grid {
+  display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 15px;
+}
+.project-card {
+  padding: 18px; border: 1px solid var(--border);
+  border-radius: 9px; background: #fbfdff;
+}
+.project-card h3 { margin-top: 0; }
+.skills { display: flex; flex-wrap: wrap; gap: 10px; }
+.skill {
+  background: var(--light-blue); color: var(--dark-blue);
+  padding: 7px 13px; border-radius: 20px; font-size: 14px;
+  border: 1px solid #d5e8f8;
+}
+.contact-links { display: flex; flex-wrap: wrap; gap: 12px; }
+.contact-links a {
+  display: inline-block; padding: 9px 14px;
+  background: var(--light-blue); border-radius: 7px; font-weight: 600;
+}
+ul { padding-left: 22px; }
+li { margin-bottom: 8px; }
+footer { text-align: center; padding: 25px 15px; background: #17476b; color: white; }
+footer p { margin: 5px; }
+footer a { color: #d6eaff; }
+
+/* MOBILE */
+@media (max-width: 650px) {
+  .hero-content { flex-direction: column; text-align: center; }
+  .hero-buttons { justify-content: center; }
+  .nav-content { gap: 12px 17px; }
+  .section { padding: 21px 18px; }
+  .project-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="hero">
+  <div class="container hero-content">
+
+    <!-- OPTIONAL PHOTO:
+         Upload your photo as profile.jpg in the repository root.
+         If no photo is uploaded, this image will hide automatically. -->
+    <img class="profile-photo"
+         src="profile.jpg"
+         alt="Manikanta Raju"
+         onerror="this.style.display='none'">
+
+    <div>
+      <h1>Manikanta Raju</h1>
+      <p class="subtitle">Deputy Manager | Electrical Engineering</p>
+      <p>Researcher in Intelligent Control Systems, Renewable Energy &amp; Electric Drives</p>
+      <div class="hero-buttons">
+        <a class="btn" href="#publications">Explore Research</a>
+        <a class="btn btn-outline" href="#experience">Professional Experience</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- NAVIGATION -->
+<nav>
+  <div class="container nav-content">
+    <a href="#about">About Me</a>
+    <a href="#experience">Experience</a>
+    <a href="#publications">Publications</a>
+    <a href="#apps">Apps</a>
+    <a href="#education">Education</a>
+    <a href="#awards">Awards</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<main class="container">
+
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <h2>About Me</h2>
+    <p>
+      I am Manikanta Raju, an electrical engineering professional with
+      experience in industrial operations and a research background in
+      intelligent control systems, cognitive computing, renewable energy,
+      artificial intelligence and electric drives.
+    </p>
+    <p>
+      My research interests include brain-inspired intelligent controllers,
+      wind energy conversion systems, photovoltaic systems, maximum power
+      point tracking and advanced motor-drive control. I am passionate about
+      research, innovation, continuous learning and applying technical
+      knowledge to practical engineering challenges.
+    </p>
+    <div class="contact-links">
+      <a href="https://scholar.google.com/citations?hl=en&amp;authuser=2&amp;user=1zPbec0AAAAJ"
+         target="_blank" rel="noopener noreferrer">Google Scholar ↗</a>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="section" id="experience">
+    <h2>Work Experience</h2>
+
+    <div class="entry">
+      <h3>Deputy Manager</h3>
+      <p><strong>Adani Krishnapatnam Port Limited</strong></p>
+      <p class="muted">April 2026 – Present</p>
+    </div>
+
+    <div class="entry">
+      <h3>Assistant Manager</h3>
+      <p><strong>Adani Krishnapatnam Port Limited</strong></p>
+      <p class="muted">April 2025 – April 2026</p>
+    </div>
+
+    <div class="entry">
+      <h3>Senior Engineer</h3>
+      <p><strong>Adani Krishnapatnam Port Limited</strong></p>
+      <p class="muted">February 2025 – April 2025</p>
+    </div>
+
+    <div class="entry">
+      <h3>Graduate Engineer Trainee (GET)</h3>
+      <p><strong>Adani Krishnapatnam Port Limited</strong></p>
+      <p class="muted">August 2024 – February 2025</p>
+    </div>
+  </section>
+
+  <!-- PUBLICATIONS -->
+  <section class="section" id="publications">
+    <h2>Research Publications</h2>
+    <p>
+      Explore my research in intelligent control, electric drives,
+      renewable energy and power electronics. Use the publication link
+      to visit the publisher's page or the full-paper link to access
+      the available paper.
+    </p>
+
+    <div class="paper-list">
+
+      <article class="paper">
+        <span class="tag">Springer</span>
+        <h3>A Novel Fuzzy Cerebellar Adaptive Neuro Intelligent Controller for High-Performance Brushless DC Motor Drives</h3>
+        <p class="muted">Research in intelligent control and brushless DC motor drives.</p>
+        <div class="paper-actions">
+          <a class="paper-btn primary"
+             href="https://link.springer.com/article/10.1007/s40435-025-01590-0"
+             target="_blank" rel="noopener noreferrer">View Publication ↗</a>
+          <a class="paper-btn"
+             href="https://rdcu.be/d69X5"
+             target="_blank" rel="noopener noreferrer">Read Full Paper ↗</a>
+        </div>
+      </article>
+
+      <article class="paper">
+        <span class="tag">Springer</span>
+        <h3>An Emotional Control Approach to Grid-Connected DFIG Based Wind Turbine</h3>
+        <p class="muted">Intelligent control for grid-connected wind energy conversion systems.</p>
+        <div class="paper-actions">
+          <a class="paper-btn primary"
+             href="https://link.springer.com/article/10.1007/s40435-023-01379-z"
+             target="_blank" rel="noopener noreferrer">View Publication ↗</a>
+          <a class="paper-btn"
+             href="https://rdcu.be/d4IQR"
+             target="_blank" rel="noopener noreferrer">Read Full Paper ↗</a>
+        </div>
+      </article>
+
+      <article class="paper">
+        <span class="tag">Springer</span>
+        <h3>Modeling and Implementation of Brain-Inspired Intelligent Controller for Permanent Magnet Synchronous Motor Drive</h3>
+        <p class="muted">Brain-inspired control and permanent magnet synchronous motor drives.</p>
+        <div class="paper-actions">
+          <a class="paper-btn primary"
+             href="https://link.springer.com/article/10.1007/s41403-024-00512-4"
+             target="_blank" rel="noopener noreferrer">View Publication ↗</a>
+          <a class="paper-btn"
+             href="https://rdcu.be/d4D0b"
+             target="_blank" rel="noopener noreferrer">Read Full Paper ↗</a>
+        </div>
+      </article>
+
+      <article class="paper">
+        <span class="tag">IEEE</span>
+        <h3>A Novel Intelligent Controller Influenced by Cerebellum for Decoupled Power Flow Control of DFIG Based Wind Energy Conversion System</h3>
+        <p class="muted">Intelligent control of power flow in wind energy conversion systems.</p>
+        <div class="paper-actions">
+          <a class="paper-btn primary"
+             href="https://ieeexplore.ieee.org/document/10718013"
+             target="_blank" rel="noopener noreferrer">View IEEE Publication ↗</a>
+          <a class="paper-btn"
+             href="https://drive.google.com/file/d/1YxBOgB2JKvRwmL_tV8DQvWQHX-U-RtPS/view?usp=sharing"
+             target="_blank" rel="noopener noreferrer">Read Full Paper ↗</a>
+        </div>
+      </article>
+
+      <article class="paper">
+        <span class="tag">ResearchSquare</span>
+        <h3>Brain Inspired Intelligent Maximum Power Point Tracking Algorithm for Grid Connected Photovoltaic System</h3>
+        <p class="muted">Brain-inspired algorithms for photovoltaic power optimization.</p>
+        <div class="paper-actions">
+          <a class="paper-btn primary"
+             href="https://www.researchsquare.com/article/rs-4052183/v1"
+             target="_blank" rel="noopener noreferrer">View Research ↗</a>
+          <a class="paper-btn"
+             href="https://drive.google.com/file/d/1M9glvIGvVVlAwojFDGTJKj0kW4QK1GoM/view?usp=sharing"
+             target="_blank" rel="noopener noreferrer">Read Full Paper ↗</a>
+        </div>
+      </article>
+
+      <article class="paper">
+        <span class="tag">Springer</span>
+        <h3>A Novel Intelligent Controller for Enhancing the Dynamic Performance of an SVM-DTC Based Induction Motor Drive</h3>
+        <p class="muted">Dynamic performance enhancement in induction motor drives.</p>
+        <div class="paper-actions">
+          <a class="paper-btn primary"
+             href="https://link.springer.com/article/10.1007/s13369-025-10532-z"
+             target="_blank" rel="noopener noreferrer">View Publication ↗</a>
+          <a class="paper-btn"
+             href="https://rdcu.be/eA23D"
+             target="_blank" rel="noopener noreferrer">Read Full Paper ↗</a>
+        </div>
+      </article>
+
+      <article class="paper">
+        <span class="tag">Under Review</span>
+        <h3>An Intelligent Technique for Improving Incremental Conductance MPPT Performance for Grid Connected Solar Photovoltaic System</h3>
+        <p class="muted">Manuscript listed as under review in a Wiley journal in my resume.</p>
+        <div class="paper-actions">
+          <a class="paper-btn primary"
+             href="https://www.researchsquare.com/article/rs-4052183/v1"
+             target="_blank" rel="noopener noreferrer">View Research Link ↗</a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="section" id="skills">
+    <h2>Technical Skills</h2>
+    <div class="skills">
+      <span class="skill">Research &amp; Development</span>
+      <span class="skill">Control Systems</span>
+      <span class="skill">Cognitive Computing</span>
+      <span class="skill">Renewable Energy</span>
+      <span class="skill">Artificial Intelligence</span>
+      <span class="skill">Electric Drives</span>
+      <span class="skill">MATLAB</span>
+      <span class="skill">Simulink</span>
+      <span class="skill">C Programming</span>
+      <span class="skill">Java</span>
+      <span class="skill">Android App Development</span>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section class="section" id="education">
+    <h2>Education</h2>
+
+    <div class="entry">
+      <h3>B.Tech (Electrical &amp; Electronics Engineering) + M.Tech (Power Electronics)</h3>
+      <p>Dual Degree — JNTUH UCESTH</p>
+      <p class="muted">2024 | GPA: 8/10</p>
+    </div>
+
+    <div class="entry">
+      <h3>Intermediate</h3>
+      <p>Bhashyam Junior College — Board of Intermediate Education, Andhra Pradesh</p>
+      <p class="muted">2019 | GPA: 10/10</p>
+    </div>
+
+    <div class="entry">
+      <h3>Secondary Education</h3>
+      <p>Bhashyam High School — Board of Secondary Education, Andhra Pradesh</p>
+      <p class="muted">2017 | GPA: 10/10</p>
+    </div>
+  </section>
+
+  <!-- INTERNSHIP -->
+  <section class="section" id="internship">
+    <h2>Internship &amp; Training</h2>
+    <div class="entry">
+      <h3>MathWorks Virtual Internship on Artificial Intelligence</h3>
+      <p class="muted">2023</p>
+      <a class="paper-btn"
+         href="https://drive.google.com/file/d/1UWo5O2yIHBKAFKsUJt__JGYrKK7ykTXA/view?usp=drive_link"
+         target="_blank" rel="noopener noreferrer">View Internship Certificate ↗</a>
+    </div>
+  </section>
+
+  <!-- APPS -->
+  <section class="section" id="apps">
+    <h2>Apps Developed</h2>
+    <div class="project-grid">
+
+      <div class="project-card">
+        <h3>Plagiarism-AI Report Generator</h3>
+        <p>Application for generating plagiarism and AI-related reports.</p>
+        <a class="paper-btn primary"
+           href="https://play.google.com/store/apps/details?id=com.mani.mani98"
+           target="_blank" rel="noopener noreferrer">View App ↗</a>
+      </div>
+
+      <div class="project-card">
+        <h3>Maniback App</h3>
+        <p>Android application project.</p>
+        <a class="paper-btn primary"
+           href="https://play.google.com/store/apps/details?id=com.mani.mani7"
+           target="_blank" rel="noopener noreferrer">View App ↗</a>
+      </div>
+
+      <div class="project-card">
+        <h3>JNTUH App</h3>
+        <p>Android application related to JNTUH.</p>
+        <a class="paper-btn primary"
+           href="https://play.google.com/store/apps/details?id=com.mani.jntuh"
+           target="_blank" rel="noopener noreferrer">View App ↗</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CERTIFICATES -->
+  <section class="section" id="certificates">
+    <h2>Certificates &amp; Recognition</h2>
+    <div class="entry">
+      <h3>Certificate of Appreciation — TPC Member &amp; Reviewer</h3>
+      <p>2024 6th International Conference on Soft Computing and its Engineering Applications.</p>
+      <a class="paper-btn" href="https://drive.google.com/file/d/1Ml_00DbuHl-YwBZnj6SPebw2oqqDYT8j/view?usp=sharing" target="_blank" rel="noopener noreferrer">View Certificate ↗</a>
+    </div>
+    <div class="entry">
+      <h3>Research Paper Presentation</h3>
+      <p>IEEE 4th International Conference on SEFET 2024.</p>
+      <a class="paper-btn" href="https://drive.google.com/file/d/13LvMAWz4Z6p3rk73wPI1ACtXeDvDji_X/view?usp=sharing" target="_blank" rel="noopener noreferrer">View Certificate ↗</a>
+    </div>
+    <div class="entry">
+      <h3>Project Presentation — Quality Concepts</h3>
+      <p>10th Annual Chapter Convention on Quality Concepts by QCFI.</p>
+      <a class="paper-btn" href="https://drive.google.com/file/d/16zA1bLapyhIMH8-0faOyfGms144KCEP3/view?usp=sharing" target="_blank" rel="noopener noreferrer">View Certificate ↗</a>
+    </div>
+    <div class="entry">
+      <h3>Journal Reviewer Appreciation</h3>
+      <p>Recognition for contribution to the Journal of Advances in Mathematics and Computer Science.</p>
+      <a class="paper-btn" href="https://drive.google.com/file/d/1YqAvY_eXIR_mMkKL-LIP093ei0E2qNsg/view?usp=sharing" target="_blank" rel="noopener noreferrer">View Certificate ↗</a>
+    </div>
+  </section>
+
+  <!-- AWARDS -->
+  <section class="section" id="awards">
+    <h2>Awards &amp; Achievements</h2>
+
+    <div class="entry">
+      <h3>Young Entrepreneur of the Year 2022</h3>
+      <p>Received from Leader Awards 2022.</p>
+      <a class="paper-btn" href="https://drive.google.com/file/d/1W3_qiAoGnqfe-RUE6ZufQ9wzvt6mnl3U/view?usp=sharing" target="_blank" rel="noopener noreferrer">View Award ↗</a>
+    </div>
+
+    <div class="entry">
+      <h3>Adani Knowledge Mall 2024–25</h3>
+      <p>Award in recognition of dedication, creativity and innovation.</p>
+      <a class="paper-btn" href="https://drive.google.com/file/d/1CEchUZVI_3JiW6nzAxohuCsFly-dIkD0/view?usp=sharing" target="_blank" rel="noopener noreferrer">View Award ↗</a>
+    </div>
+
+    <div class="entry">
+      <h3>Best Facilitator Award — CCQC 2025</h3>
+      <p>11th Annual Convention on Quality Concepts, QCFI Tirupati Chapter.</p>
+      <a class="paper-btn" href="https://drive.google.com/drive/folders/1Sw-WbowrXwOx4nCTXdxpsy2adBn9ISNo?usp=sharing" target="_blank" rel="noopener noreferrer">View Award Documents ↗</a>
+    </div>
+
+    <div class="entry">
+      <h3>Gold Award — CCQC 2024</h3>
+      <p>10th Convention on Quality Concepts, QCFI Tirupati Chapter.</p>
+    </div>
+
+    <div class="entry">
+      <h3>Excellent Award — NCQC 2024</h3>
+      <p>Recognized by QCFI and selected for the international level.</p>
+    </div>
+  </section>
+
+  <!-- RESUME -->
+  <section class="section" id="resume">
+    <h2>Resume &amp; CV</h2>
+    <p>
+      Interested in my complete professional background?
+      View or download my detailed resume.
+    </p>
+    <!-- Upload your resume PDF to the repository root as resume.pdf -->
+    <div class="paper-actions">
+      <a class="btn btn-blue" href="resume.pdf" target="_blank">View Full Resume ↗</a>
+      <a class="paper-btn" href="resume.pdf" download="Manikanta-Raju-Resume.pdf">Download Resume ↓</a>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section" id="contact">
+    <h2>Contact Me</h2>
+    <p>Feel free to connect with me regarding research, technical collaboration and professional opportunities.</p>
+    <div class="contact-links">
+      <a href="mailto:manivelpula5@gmail.com">✉ Email Me</a>
+      <a href="tel:+917032882037">☎ +91 7032882037</a>
+      <a href="https://scholar.google.com/citations?hl=en&amp;authuser=2&amp;user=1zPbec0AAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar ↗</a>
+      <!-- Replace this URL with your own LinkedIn profile -->
+      <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p><strong>Manikanta Raju</strong></p>
+  <p>Electrical Engineering | Research | Intelligent Control Systems</p>
+  <p>© 2026 Manikanta Raju. All rights reserved.</p>
+  <p><a href="#about">Back to Top ↑</a></p>
+</footer>
+
+</body>
+</html>
